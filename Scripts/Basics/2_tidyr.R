@@ -9,11 +9,13 @@ lures<- lures[1:100,c(2,4,5,6,7,8)]
 unique_shopID <- unique(lures$'SHOP ID')
 unique_shopID
 
+View(lures)
+
 # Spread
 #There are times when we are required to turn long formatted
 #data into wide formatted data. The spread() function spreads a key-value
 #pair across multiple columns.
-lures_spread = spread(lures,'SHOP ID', REVENUE )
+lures_spread = spread(lures,'SHOP ID', REVENUE ) # ' ' due to space between SHOP and ID
 View(lures_spread)
 
 # Gather
@@ -22,7 +24,7 @@ View(lures_spread)
 #data such that these common attributes are gathered together as a single
 #variable, the gather() function will take multiple columns and collapse them
 #into key-value pairs, duplicating all other columns as needed.
-lures_gather = gather(lures_spread, ShopID, Revenue,5:13)
+lures_gather = gather(lures_spread, ShopID, Revenue,7:15)
 View(lures_gather)
 
 # Separate
